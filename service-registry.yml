@@ -2,9 +2,9 @@ server:
   port: 9091
 eureka:
   instance:
-    hostname: localhost
+    hostname: https://nttdata-microservice-registry.azurewebsites.net
   client:
     register-with-eureka: false
     fecth-registry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}/eureka/
