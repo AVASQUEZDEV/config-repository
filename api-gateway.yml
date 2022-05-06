@@ -8,3 +8,17 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:9091/eureka/  
+
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: bank-account-microservice
+        uri: lb://BANK-ACCOUNT-MICROSERVICE
+        predicates:
+        - Path=/api/v1/bank-accounts/**
+        
+      - id: card-microservice
+        uri: lb://CARD-MICROSERVICE
+        predicates:
+        - Path=/api/v1/cards/**, /api/v1/card-types/**
