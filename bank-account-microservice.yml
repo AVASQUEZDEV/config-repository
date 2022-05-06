@@ -16,21 +16,16 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:9091/eureka/      
 
-microservices:
-  client:
-    base-url: http://localhost:8083
-    base-path: /api/v1
-    end-point:
-      client: ${microservices.client.base-path}/clients
-      plan: ${microservices.client.base-path}/plans
-  product:
-    base-url: http://localhost:8085
-    base-path: /api/v1
-    end-point:
-      product: ${microservices.product.base-path}/products
-      category: ${microservices.product.base-path}/categories   
-  transaction:
-    base-url: http://localhost:8081
-    base-path: /api/v1
-    end-point:
-      credit: ${microservices.transaction.base-path}/credits
+api-gateway:
+  base:
+    url: http://localhost:9092
+    path: /api/v1
+  routes:
+    ms-client:
+      client: ${api-gateway.base.url}/${api-gateway.base.path}/clients
+      plan: ${api-gateway.base.url}/${api-gateway.base.path}/plans
+    ms-product:
+      product: ${api-gateway.base.url}/${api-gateway.base.path}/products
+      category: ${api-gateway.base.url}/${api-gateway.base.path}/categories
+    ms-transaction:    
+      credit: ${api-gateway.base.url}/${api-gateway.base.path}/credits
