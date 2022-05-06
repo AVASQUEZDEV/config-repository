@@ -18,6 +18,21 @@ spring:
         predicates:
         - Path=/api/v1/bank-accounts/**
         
+      - id: bank-transaction-microservice
+        uri: lb://BANK-TRANSACTION-MICROSERVICE
+        predicates:
+        - Path=/api/v1/credits/**, /api/v1/deposits/**, /api/v1/withdrawals/**
+        
+      - id: client-microservice
+        uri: lb://CLIENT-MICROSERVICE
+        predicates:
+        - Path=/api/v1/clients/**, /api/v1/plans/**        
+        
+      - id: product-microservice
+        uri: lb://PRODUCT-MICROSERVICE
+        predicates:
+        - Path=/api/v1/products/**, /api/v1/categories/**         
+        
       - id: card-microservice
         uri: lb://CARD-MICROSERVICE
         predicates:
