@@ -12,16 +12,14 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:9091/eureka/   
-      
-microservices:
-  client:
-    base-url: http://localhost:8083
-    base-path: /api/v1
-    end-point:
-      client: ${microservices.client.base-path}/clients
-      plan: ${microservices.client.base-path}/plans
-  bank-account:
-    base-url: http://localhost:8080
-    base-path: /api/v1
-    end-point:
-      bank-account: ${microservices.bank-account.base-path}/bank-accounts
+
+api-gateway:
+  base:
+    url: http://localhost:9092
+    path: /api/v1
+  routes:
+    ms-client:
+      client: ${api-gateway.base.url}/${api-gateway.base.path}/clients
+      plan: ${api-gateway.base.url}/${api-gateway.base.path}/plans
+    ms-bank-account:
+      product: ${api-gateway.base.url}/${api-gateway.base.path}/bank-accounts
