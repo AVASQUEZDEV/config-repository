@@ -2,6 +2,7 @@ server:
   port: 8085
   error:
     include-message: always
+spring:    
   data:
     mongodb:
       uri: mongodb+srv://administrator:9exM6fWPUpdq7xFI@nttdata.m70zc.mongodb.net/msproduct
