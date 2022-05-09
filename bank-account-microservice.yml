@@ -22,10 +22,10 @@ api-gateway:
     path: /api/v1
   routes:
     ms-client:
-      client: ${api-gateway.base.url}/${api-gateway.base.path}/clients
-      plan: ${api-gateway.base.url}/${api-gateway.base.path}/plans
+      client: ${api-gateway.base.url}${api-gateway.base.path}/clients
+      plan: ${api-gateway.base.url}${api-gateway.base.path}/plans
     ms-product:
-      product: ${api-gateway.base.url}/${api-gateway.base.path}/products
-      category: ${api-gateway.base.url}/${api-gateway.base.path}/categories
+      product: ${api-gateway.base.url}${api-gateway.base.path}/products
+      category: ${api-gateway.base.url}${api-gateway.base.path}/categories
     ms-transaction:    
-      credit: ${api-gateway.base.url}/${api-gateway.base.path}/credits
+      credit: ${api-gateway.base.url}${api-gateway.base.path}/credits
