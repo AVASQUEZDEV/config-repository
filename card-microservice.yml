@@ -13,3 +13,11 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:9091/eureka/  
+
+api-gateway:
+  base:
+    url: http://localhost:9092
+    path: /api/v1
+  routes:
+    ms-bank-account:
+      account: ${api-gateway.base.url}${api-gateway.base.path}/bank-accounts
