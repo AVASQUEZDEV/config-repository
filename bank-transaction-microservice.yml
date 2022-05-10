@@ -21,5 +21,5 @@ api-gateway:
     ms-client:
       client: ${api-gateway.base.url}${api-gateway.base.path}/clients
       plan: ${api-gateway.base.url}${api-gateway.base.path}/plans
-    ms-bank-account:
-      account: ${api-gateway.base.url}${api-gateway.base.path}/bank-accounts
+    ms-card:
+      card: ${api-gateway.base.url}${api-gateway.base.path}/cards
