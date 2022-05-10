@@ -4,8 +4,6 @@ eureka:
   instance:
     hostname: localhost
     #hostname: https://nttdata-microservice-registry.azurewebsites.net
-  server:
-    enable-self-preservation: false
   client:
     register-with-eureka: false
     fecth-registry: false
