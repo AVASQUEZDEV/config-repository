@@ -16,7 +16,7 @@ eureka:
 
 api-gateway:
   base:
-    url: http://localhost:9092
+    url: http://localhost:9099
     path: /api/v1
   routes:
     ms-bank-account:
